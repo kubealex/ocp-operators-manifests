@@ -1,0 +1,30 @@
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: rhacs-operator
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: stackrox
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: rhacs-operator-abcde
+  namespace: rhacs-operator
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/rhacs-operator.rhacs-operator: ""
+  name: rhacs-operator
+  namespace: rhacs-operator
+spec:
+  channel: latest
+  installPlanApproval: Automatic
+  name: rhacs-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace

@@ -1,0 +1,28 @@
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: rh-sso
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: rh-sso-abcde
+  namespace: rh-sso
+spec:
+  targetNamespaces:
+    - rh-sso
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/rhsso-operator.rh-sso: ""
+  name: rhsso-operator
+  namespace: rh-sso
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: rhsso-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
