@@ -4,7 +4,7 @@ This repo is meant to provide an as-code approach to install OCP Operators using
 
 Each operator comes with the default settings, that can be overridden using the kustomization template associated with each.
 
-They can easily be referenced in [ArgoCD](https://argo-cd.readthedocs.io/) Applications .
+They can easily be referenced in [ArgoCD](https://argo-cd.readthedocs.io/) Applications:
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
