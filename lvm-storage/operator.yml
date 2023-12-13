@@ -21,7 +21,7 @@ metadata:
   name: odf-lvm-operator
   namespace: openshift-storage
 spec:
-  channel: stable-4.13
+  channel: stable-4.14
   installPlanApproval: Automatic
   name: odf-lvm-operator
   source: redhat-operators
