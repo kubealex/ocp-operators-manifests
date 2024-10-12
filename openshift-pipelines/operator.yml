@@ -1,0 +1,27 @@
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: openshift-pipelines
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  generateName: openshift-pipelines-operator
+  name: pipelines-operator-xwbp2
+  namespace: openshift-pipelines
+spec:
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/odf-operator.openshift-storage: ""
+  name: openshift-pipelines
+  namespace: openshift-operators
+spec:
+  channel: latest
+  installPlanApproval: Automatic
+  name: openshift-pipelines-operator-rh
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
