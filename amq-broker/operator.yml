@@ -9,11 +9,11 @@ kind: Subscription
 metadata:
   labels:
     operators.coreos.com/amq-broker-rhel8.openshift-operators: ""
-  name: amq-broker-rhel8
+  name: amq-broker-rhel9
   namespace: openshift-operators
 spec:
-  channel: 7.11.x
+  channel: 7.13.x
   installPlanApproval: Automatic
-  name: amq-broker-rhel8
+  name: amq-broker-rhel9
   source: redhat-operators
   sourceNamespace: openshift-marketplace
